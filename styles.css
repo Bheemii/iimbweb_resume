@@ -1,0 +1,381 @@
+/* Enhanced CSS for a modern, sustainable resume website */
+
+/* Define color palette for consistency */
+:root {
+  --primary: #1B5E20; /* Deep forest green */
+  --secondary: #F9FAF5; /* Softer cream for background */
+  --accent: #76FF03; /* Vibrant lime green */
+  --teal: #004D40; /* Richer teal for header/sidebar/footer */
+  --text-dark: #1A1A1A; /* Dark text for readability */
+  --glass-bg: rgba(255, 255, 255, 0.2); /* Subtle glassmorphism */
+  --glass-border: 1px solid rgba(255, 255, 255, 0.3);
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 80px; /* Offset for fixed header on desktop */
+}
+
+body {
+  font-family: Verdana, sans-serif;
+  background: linear-gradient(135deg, var(--secondary) 0%, #E8F5E9 100%);
+  color: var(--text-dark);
+  line-height: 1.7;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  min-height: 100vh;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-family: Georgia, serif;
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2.2rem;
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  width: 100px;
+  height: 3px;
+  background: var(--accent);
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Header */
+.custom-header {
+  background: linear-gradient(90deg, var(--teal), #00695C);
+  padding: 15px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.sidebar-toggle {
+  display: none;
+}
+
+.hamburger {
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.hamburger:hover {
+  transform: scale(1.1);
+}
+
+.header-profile-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.header-profile-img:hover {
+  transform: scale(1.05);
+}
+
+.header-info h1 {
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.header-tagline {
+  font-size: 0.9rem;
+  color: #E0E0E0;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-mail {
+  font-size: 1.3rem;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.header-mail:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+.header-download {
+  background: var(--accent);
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.header-download:hover {
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+/* Container and Sidebar */
+.container {
+  display: flex;
+  margin-top: 80px;
+}
+
+.sidebar {
+  width: 250px;
+  background: var(--teal);
+  padding: 20px 0;
+  position: fixed;
+  height: 100vh;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-btn {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: 10px auto;
+  padding: 12px 15px;
+  background: var(--glass-bg);
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.sidebar-btn:hover {
+  background: var(--accent);
+  color: #000;
+  transform: translateX(5px);
+}
+
+.sidebar-btn .icon {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+/* Main Content */
+main {
+  flex: 1;
+  margin-left: 250px;
+  padding: 40px 20px;
+  transition: margin-left 0.3s ease;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  padding: 100px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(27, 94, 32, 0.2), rgba(118, 255, 3, 0.2));
+  border-radius: 15px;
+  margin-bottom: 40px;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hero-profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.hero-profile-img:hover {
+  transform: scale(1.05);
+}
+
+.hero-profile-name {
+  font-size: 2.5rem;
+  color: var(--primary);
+}
+
+.hero-profile-title, .hero-profile-study, .hero-profile-location {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 8px 0;
+}
+
+/* Sections */
+.section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px;
+  background: var(--glass-bg);
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+}
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  color: var(--primary);
+}
+
+.card p, .card ul li {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Skills */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.skills-list li {
+  background: var(--teal);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.skills-list li:hover {
+  background: var(--accent);
+  color: #000;
+  transform: scale(1.1);
+}
+
+/* Contact */
+.contact-info p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  margin: 15px 0;
+}
+
+.contact-info .icon {
+  margin-right: 10px;
+  font-size: 1.4rem;
+}
+
+/* Footer */
+footer {
+  background: var(--teal);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.social-links a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 130px; /* Offset for fixed header on mobile */
+  }
+
+  .custom-header {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: absolute;
+    top: 130px;
+    left: 0;
+    transform: translateX(-100%);
+    z-index: 999;
+  }
+
+  .sidebar-toggle:checked ~ .sidebar {
+    transform: translateX(0);
+  }
+
+  main {
+    margin-left: 0;
+  }
+
+  .hero-profile-img {
+    margin: 0 auto;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+}
